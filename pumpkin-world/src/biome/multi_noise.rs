@@ -165,7 +165,7 @@ fn create_node<T: Clone>(parameter_number: usize, sub_tree: Vec<TreeNode<T>>) ->
             bounds,
         };
     }
-    let mut best_split = (0..parameter_number)
+    let best_split = (0..parameter_number)
         .map(|param_idx| {
             let mut sorted_sub_tree = sub_tree.clone();
             sort_tree(&mut sorted_sub_tree, parameter_number, param_idx, false);
@@ -379,12 +379,9 @@ fn squared_distance(a: &[ParameterRange; 7], b: &[i64; 7]) -> i64 {
 
 #[cfg(test)]
 mod test {
-    use crate::biome::{
-        BIOME_ENTRIES,
-        multi_noise::{TreeNode, create_node},
-    };
+    use crate::biome::multi_noise::{TreeNode, create_node};
 
-    use super::{NoiseHypercube, ParameterRange, squared_distance};
+    use super::{NoiseHypercube, ParameterRange};
 
     #[test]
     fn test_create_node_single_leaf() {

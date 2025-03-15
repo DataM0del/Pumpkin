@@ -1,7 +1,6 @@
 use std::{cell::RefCell, collections::HashMap, sync::LazyLock};
 
 use enum_dispatch::enum_dispatch;
-use futures::SinkExt;
 use multi_noise::{NoiseHypercube, SearchTree, TreeLeafNode};
 use pumpkin_data::chunk::Biome;
 use pumpkin_util::math::vector3::Vector3;
