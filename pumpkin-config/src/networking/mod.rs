@@ -5,6 +5,8 @@ use rcon::RCONConfig;
 use serde::{Deserialize, Serialize};
 
 use crate::{CompressionConfig, LANBroadcastConfig};
+#[cfg(feature = "schemars")]
+use schemars::JsonSchema;
 
 pub mod auth;
 pub mod compression;
@@ -14,6 +16,7 @@ pub mod query;
 pub mod rcon;
 
 #[derive(Deserialize, Serialize, Default)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 pub struct NetworkingConfig {
     pub authentication: AuthenticationConfig,
     pub query: QueryConfig,

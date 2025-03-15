@@ -1,7 +1,10 @@
 use pumpkin_util::PermissionLvl;
 use serde::{Deserialize, Serialize};
+#[cfg(feature = "schemars")]
+use schemars::JsonSchema;
 
 #[derive(Deserialize, Serialize)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[serde(default)]
 pub struct CommandsConfig {
     /// Are commands from the Console accepted ?

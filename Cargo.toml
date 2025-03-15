@@ -1,6 +1,7 @@
 [workspace]
 resolver = "2"
 members = [
+    "generate-schemas",
     "pumpkin-api-macros",
     "pumpkin-config",
     "pumpkin-util",

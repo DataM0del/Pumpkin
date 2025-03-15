@@ -1,6 +1,9 @@
 use serde::{Deserialize, Serialize};
+#[cfg(feature = "schemars")]
+use schemars::JsonSchema;
 
 #[derive(Deserialize, Serialize)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[serde(default)]
 /// Packet compression
 pub struct CompressionConfig {
@@ -20,6 +23,7 @@ impl Default for CompressionConfig {
 }
 
 #[derive(Deserialize, Serialize, Clone)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[serde(default)]
 /// We have this in a Separate struct so we can use it outside of the Config
 pub struct CompressionInfo {

@@ -10,7 +10,9 @@ log.workspace = true
 uuid.workspace = true
 
 toml = "0.8"
+schemars = { version = "0.8.22", optional = true, features = ["uuid1"] }
 
 [features]
 # Adds helper to change the config at runtime
 test_helper = []
+schemars = ["dep:schemars", "pumpkin-util/schemars"]

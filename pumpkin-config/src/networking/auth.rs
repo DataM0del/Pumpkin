@@ -1,7 +1,10 @@
 use pumpkin_util::ProfileAction;
+#[cfg(feature = "schemars")]
+use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[serde(default)]
 pub struct AuthenticationConfig {
     /// Whether to use Mojang authentication.
@@ -33,6 +36,7 @@ impl Default for AuthenticationConfig {
 }
 
 #[derive(Deserialize, Serialize)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[serde(default)]
 pub struct PlayerProfileConfig {
     /// Allow players flagged by Mojang (banned, forced name change).
@@ -54,6 +58,7 @@ impl Default for PlayerProfileConfig {
 }
 
 #[derive(Deserialize, Serialize)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[serde(default)]
 pub struct TextureConfig {
     /// Whether to use player textures.
@@ -78,6 +83,7 @@ impl Default for TextureConfig {
 }
 
 #[derive(Deserialize, Serialize)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[serde(default)]
 pub struct TextureTypes {
     /// Use player skins.

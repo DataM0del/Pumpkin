@@ -3,6 +3,8 @@ use log::warn;
 use logging::LoggingConfig;
 use pumpkin_util::{Difficulty, GameMode, PermissionLvl};
 use serde::{Deserialize, Serialize, de::DeserializeOwned};
+#[cfg(feature = "schemars")]
+use schemars::JsonSchema;
 
 use std::{
     env, fs,
@@ -83,6 +85,7 @@ pub fn advanced_config() -> &'static AdvancedConfiguration {
 /// This also allows you get some Performance or Resource boosts.
 /// Important: The Configuration should match Vanilla by default
 #[derive(Deserialize, Serialize, Default)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[serde(default)]
 pub struct AdvancedConfiguration {
     pub logging: LoggingConfig,
@@ -95,6 +98,7 @@ pub struct AdvancedConfiguration {
 }
 
 #[derive(Serialize, Deserialize)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 #[serde(default)]
 pub struct BasicConfiguration {
     /// The address to bind the server to.

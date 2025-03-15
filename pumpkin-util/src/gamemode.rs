@@ -1,11 +1,14 @@
 use std::str::FromStr;
 
 use serde::{Deserialize, Serialize};
+#[cfg(feature = "schemars")]
+use schemars::JsonSchema;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct ParseGameModeError;
 
 #[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "schemars", derive(JsonSchema))]
 pub enum GameMode {
     Survival,
     Creative,
