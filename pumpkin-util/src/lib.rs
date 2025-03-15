@@ -12,9 +12,9 @@ use std::ops::{Index, IndexMut};
 pub use gamemode::GameMode;
 pub use permission::PermissionLvl;
 
-use serde::{Deserialize, Serialize};
 #[cfg(feature = "schemars")]
 use schemars::JsonSchema;
+use serde::{Deserialize, Serialize};
 
 #[derive(PartialEq, Serialize, Deserialize, Clone)]
 #[cfg_attr(feature = "schemars", derive(JsonSchema))]

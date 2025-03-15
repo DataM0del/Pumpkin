@@ -1,8 +1,8 @@
 use std::str::FromStr;
 
-use serde::{Deserialize, Serialize};
 #[cfg(feature = "schemars")]
 use schemars::JsonSchema;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct ParseGameModeError;

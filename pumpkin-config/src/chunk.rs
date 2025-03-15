@@ -1,8 +1,8 @@
 use std::str;
 
-use serde::{Deserialize, Serialize};
 #[cfg(feature = "schemars")]
 use schemars::JsonSchema;
+use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize, Default, Clone)]
 #[cfg_attr(feature = "schemars", derive(JsonSchema))]

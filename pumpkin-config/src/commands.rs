@@ -1,7 +1,7 @@
 use pumpkin_util::PermissionLvl;
-use serde::{Deserialize, Serialize};
 #[cfg(feature = "schemars")]
 use schemars::JsonSchema;
+use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
 #[cfg_attr(feature = "schemars", derive(JsonSchema))]

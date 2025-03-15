@@ -1,8 +1,8 @@
 use pumpkin_util::permission::PermissionLvl;
-use serde::{Deserialize, Serialize};
-use uuid::Uuid;
 #[cfg(feature = "schemars")]
 use schemars::JsonSchema;
+use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 
 #[derive(Serialize, Deserialize, Clone, Default)]
 #[cfg_attr(feature = "schemars", derive(JsonSchema))]

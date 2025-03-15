@@ -2,9 +2,9 @@ use chunk::ChunkConfig;
 use log::warn;
 use logging::LoggingConfig;
 use pumpkin_util::{Difficulty, GameMode, PermissionLvl};
-use serde::{Deserialize, Serialize, de::DeserializeOwned};
 #[cfg(feature = "schemars")]
 use schemars::JsonSchema;
+use serde::{Deserialize, Serialize, de::DeserializeOwned};
 
 use std::{
     env, fs,
